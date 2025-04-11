@@ -17,6 +17,9 @@ const { paymentService } = require("./services");
 
 const app = express();
 
+// Trust proxy - add this line to fix the rate limiter issue
+app.set("trust proxy", 1);
+
 // Set security HTTP headers
 app.use(helmet());
 
